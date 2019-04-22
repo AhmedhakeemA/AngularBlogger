@@ -1,0 +1,57 @@
+<div class="alert alert-warning" role="alert" *ngIf="MessageResponse">
+  {{MessageResponse}}
+</div>
+<div class="card w-75">
+  <div class="card-header">
+    New :)
+  </div>
+  <div class="card-body">
+    <form [formGroup]="CommentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Comment Header</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nameComment"
+          placeholder="post Header">
+
+        <div *ngIf="submitted && CommentForm.controls.nameComment.errors" class="error">
+          <div *ngIf="CommentForm.controls.nameComment.errors.required">Your Header is required, bro.</div>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">email</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email"
+            placeholder="post Header">
+
+          <div *ngIf="submitted && CommentForm.controls.email.errors" class="error">
+            <div *ngIf="CommentForm.controls.email.errors.required">Your Header is required, bro.</div>
+            <div *ngIf="CommentForm.controls.email.errors.email">enter Valid Email, bro.</div>
+          </div>
+        </div>
+      <div class="form-group">
+
+        <label for="exampleFormControlTextarea1">Body</label>
+        <textarea class="form-control" formControlName="bodyComment" id="exampleFormControlTextarea1" rows="10"></textarea>
+
+        <div *ngIf="submitted && CommentForm.controls.bodyComment.errors" class="error">
+          <div *ngIf="CommentForm.controls.bodyComment.errors.required">Your Body is required, bro.</div>
+          <div *ngIf="CommentForm.controls.bodyComment.errors.minlength">min lenght 100.</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+
+          </div>
+          <div class="col-sm">
+            <button class="btn btn-md btn-success btn-block" type="submit">Save Post</button>
+          </div>
+          <div class="col-sm">
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

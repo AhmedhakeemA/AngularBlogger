@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+    
+    </div>
+    <div class="col-6">
+     
+<div class="card" *ngFor="let item of TodoList">
+<div class="card-body">
+<h5 class="card-title">{{item.title}}</h5>
+<button type="button" class="btn btn-info" style="margin-right:5px;">
+  ID <span class="badge badge-light">{{item.id}}</span>
+  <span class="sr-only">unread messages</span>
+</button>
+<input type="hidden" #UserIDD value="{{item.userId}}">
+<button type="button" class="btn btn-success" style="margin-right:5px;">
+  userId <span class="badge badge-light">{{item.userId}}</span>
+  <span class="sr-only">unread messages</span>
+</button>
+
+<button type="button" *ngIf="item.completed === true" class="btn btn-warning">{{item.completed}}</button>
+<button type="button" *ngIf="item.completed === false" class="btn btn-danger">{{item.completed}}</button>
+
+</div>
+</div>
+
+
+
+    </div>
+    <div class="col">
+  
+    </div>
+  </div>
+  </div>

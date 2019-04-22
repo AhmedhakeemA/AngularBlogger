@@ -1,0 +1,57 @@
+
+
+<div *ngIf="loading" class="loader">
+ <!-- <h1>loading ...</h1> -->
+
+</div>
+
+<div *ngIf="!loading">
+<h1>Albums</h1>
+<ul>
+
+ <li *ngFor="let number of Pages">
+
+<!-- <div class="card bg-success" style=" height:5rem;">
+  <div class="card-body">
+   {{number}}
+  </div>
+</div> -->
+
+<div class="row mb-10" style="margin-bottom:10px;">
+  <div class="col" *ngFor="let item of Albumsx">
+
+<div class="card" style="width: 12rem; height:20rem; margin-bottom:15px;">
+  <!-- <img class="card-img-top" src="{{item['firstImage']}}" alt="Card image cap"> -->
+  <img class="card-img-top" src="{{item['firstImage']}}" alt="Card image cap">
+  <div class="card-body">
+ 
+    <input type="hidden" value="{{item['Album'].userId}}">
+   <a class="btn btn-success btn-sm" role="button" style="margin-right:4px;">
+     Publisher <span class="badge badge-light">{{item['Album'].userId}}</span>
+   </a><br>
+   <input type="hidden" #idcx value="{{item['Album'].id}}">
+   <a class="btn btn-info btn-sm" (click)="onSearch(idcx.value)" role="button" style="margin-right:4px;">
+     ID <span class="badge badge-light">{{item['Album'].id}} </span>
+   </a>
+
+
+    <p class="card-text">
+      {{item['Album'].title}}<br>
+      <!-- {{item['Album'].id}} <br>
+        {{item['Album'].userId}} <br> -->
+    </p>
+  </div>
+
+</div>
+
+  </div>
+ 
+</div>
+
+
+  </li>
+
+</ul>
+
+
+</div>

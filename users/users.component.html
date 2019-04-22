@@ -1,0 +1,111 @@
+<h1> Users</h1>
+<ul>
+  <li style="margin-bottom:15px;">
+    <div class="row" style="margin-bottom:15px;" >
+      <div class="col" >
+
+    <!-- *ngFor="let number of Pages" -->
+<div class="card" style="width: 60rem;" *ngFor="let user of userData">
+  <div class="card-body">
+    <h5 class="card-title">
+
+      <a class="btn btn-info btn-sm" role="button" style="margin-right:4px;">
+        ID <span class="badge badge-light">{{user.id}}</span>
+      </a>
+    </h5>
+
+  </div>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>name</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>username</td>
+        <td>{{user.username}}</td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td>Adress</td>
+        <td>
+      <tr>
+        <td>street</td>
+        <td>{{user['address'].street}}</td>
+      </tr>
+      <tr>
+        <td>suite</td>
+        <td>{{user['address'].suite}}</td>
+      </tr>
+      <tr>
+        <td>city</td>
+        <td>{{user['address'].city}}</td>
+      </tr>
+      <tr>
+        <td>zipcode</td>
+        <td>{{user['address'].zipcode}}</td>
+      </tr>
+      <tr>
+        <td>geo</td>
+        <td>
+      <tr>
+        <td>lat</td>
+        <td>{{user['address'].geo.lat}}</td>
+      </tr>
+      <tr>
+        <td>lng</td>
+        <td>-{{user['address'].geo.lng}}</td>
+      </tr>
+      </td>
+      </tr>
+
+      </td>
+      </tr>
+      <tr>
+        <td>phone</td>
+        <td>{{user.phone}}</td>
+      </tr>
+      <tr>
+        <td>website</td>
+        <td><a href="www.{{user.website}}">{{user.website}}</a></td>
+      </tr>
+      <!-- <tr>
+        <td>website</td>
+        <td><a href={{user.website}}">{{user.website}}</a></td>
+      </tr> -->
+      <tr>
+        <td>company</td>
+        <td>
+      <tr>
+        <td>name</td>
+        <td>{{user['company'].name}}</td>
+      </tr>
+      <tr>
+        <td>catchPhrase</td>
+        <td>{{user['company'].catchPhrase}}</td>
+      </tr>
+      <tr>
+        <td>bs</td>
+        <td>{{user['company'].bs}}</td>
+      </tr>
+      </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <!-- <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div> -->
+</div>
+
+
+
+      </div>
+    </div>
+
+  </li>
+</ul>

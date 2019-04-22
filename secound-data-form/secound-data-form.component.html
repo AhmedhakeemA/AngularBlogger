@@ -1,0 +1,38 @@
+
+<div class="alert alert-primary" role="alert" *ngIf="showAlert">
+ Upolad Image Sucess with ID:  {{resData.id}}
+</div>
+
+
+<div class="card" class="card w-75">
+  <div class="card-body">
+<form [formGroup]="UploaderFrom" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+  <div class="custom-file">
+    <input formControlName="ImageFile" type="file" class="custom-file-input" id="customFile"
+      (change)="onFileSelected($event)">
+    <label class="custom-file-label" for="customFile">{{namex}}</label>
+      <div *ngIf="submitted && UploaderFrom.controls.ImageFile.errors" class="error">
+        <div *ngIf="UploaderFrom.controls.ImageFile.errors.required">Your File is required, bro.</div>
+
+      </div>
+  </div> 
+     
+  <br>
+  <br>
+
+       <div class="container">
+         <div class="row">
+           <div class="col-sm">
+
+           </div>
+           <div class="col-sm">
+             <button class="btn btn-md btn-success btn-block" type="submit">Save file</button>
+           </div>
+           <div class="col-sm">
+
+           </div>
+         </div>
+       </div>
+</form>
+  </div>
+</div>

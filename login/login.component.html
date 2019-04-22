@@ -1,0 +1,36 @@
+<div class="container" style="margin-top:10%;">
+<div class="row">
+<div class="col-sm">
+
+</div>
+<div class="col-sm">
+<div class="text-center">
+
+<form class="form-signin" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+<img class="mb-4" src="../../assets/onecard-logo.png" alt="" width="108" height="100">
+<h1 class="h3 mb-3 font-weight-normal">OneCard Blog</h1>
+<label for="inputEmail" class="sr-only">Email address</label>
+<input type="email" class="form-control" placeholder="Email address" formControlName="email" required
+autofocus><br>
+<div *ngIf="submitted && messageForm.controls.email.errors" class="error">
+<div *ngIf="messageForm.controls.email.errors.required">Your email is required, bro.</div>
+<div *ngIf="messageForm.controls.email.errors.email">Email must be a valid email address</div>
+</div>
+<label for="inputPassword" class="sr-only">Password</label>
+<input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+<div *ngIf="submitted && messageForm.controls.password.errors" class="error">
+<div *ngIf="messageForm.controls.password.errors.required">A password is required</div>
+<div *ngIf="messageForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
+<input type="hidden" formControlName="_token" class="form-control" [(ngModel)]="CryptGenerated">
+</div><br>
+<button class="btn btn-md btn-success btn-block" type="submit">Sign in</button>
+<p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+</form>
+
+</div>
+</div>
+<div class="col-sm">
+  
+</div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container" >
+
+  <div class="row">
+    <div class="col" >
+   
+    </div>
+    <div class="col-7" >
+
+      <!-- col start -->
+
+ <div class="card md-3" *ngFor="let item of posts">
+   <div class="card-body">
+     <h5 class="card-title">{{item.title}}</h5>
+     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+     <a class="btn btn-success btn-sm"  role="button" style="margin-right:4px;">
+        Publisher <span class="badge badge-light">{{item.userId}}</span>
+     </a>
+     <input type="hidden" #idcx value="{{item.id}}">
+           <a class="btn btn-info btn-sm" (click)="onSearch(idcx.value)" role="button" style="margin-right:4px;">
+             ID <span class="badge badge-light">{{item.id}}</span>
+           </a>
+     <p class="card-text">{{item.body}}
+     </p>
+   <button type="button" class="btn btn-outline-danger" style="margin-right:4px;"><i
+       class="fas fa-thumbs-up"></i></button>
+     <!-- <a href="#" class="card-link">Another link</a> -->
+   </div>
+   <!-- <ul class="list-group">
+     <li class="list-group-item " *ngFor="let comn of comments">
+     {{comn.id}}
+
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-info btn-sm" href="#" role="button" >
+            ID <span class="badge badge-light">{{comn.id}}</span>
+          </a>
+          <h5 class="card-title">{{comn.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted"> {{comn.email}}</h6>
+          <p class="card-text">{{comn.body}}</p>
+        </div>
+      </div>
+
+     </li>
+     
+   </ul> -->
+ </div>
+
+
+ <!-- col end -->
+    </div>
+    <div class="col" >
+ 
+    </div>
+  </div>
+</div>

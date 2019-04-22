@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-7">
+
+
+      <div class="card" *ngFor="let item of Comments">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <button type="button" class="btn btn-dark btn-sm" style="margin-bottom:10px;">
+            ID <span class="badge badge-light">{{item.id}}</span>
+          </button>
+          <button type="button" class="btn btn-success btn-sm" style="margin-bottom:10px; margin-left:5px;">
+            Post <span class="badge badge-light">{{item.postId}}</span>
+          </button>
+          <h6 class="card-subtitle mb-2 text-muted">{{item.email}}</h6>
+          <p class="card-text">
+            {{item.body}}
+          </p>
+
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>

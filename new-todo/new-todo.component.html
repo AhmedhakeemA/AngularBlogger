@@ -1,0 +1,47 @@
+<div class="alert alert-warning" role="alert" *ngIf="MessageResponse">
+  {{MessageResponse}}
+</div>
+<div class="card w-75">
+  <div class="card-header">
+    New Todo :)
+  </div>
+  <div class="card-body">
+
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputState">User</label>
+          <select id="inputState" class="form-control" formControlName="user" required>
+            <!-- <option value="" selected>Choose...</option> -->
+            <option value="{{uer.id}}" *ngFor="let uer of userData">{{uer.name}}</option>
+          </select>
+          <div *ngIf="submitted && todoForm.controls.user.errors" class="error">
+            <div *ngIf="todoForm.controls.user.errors.required">Your user is required, bro.</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Status</label>
+          <select id="inputState" class="form-control" formControlName="Status" required>
+            <!-- <option value="" selected>Choose...</option> -->
+            <option value="{{uer}}" *ngFor="let uer of Status">{{uer}}</option>
+          </select>
+
+          <div *ngIf="submitted && todoForm.controls.Status.errors" class="error">
+            <div *ngIf="todoForm.controls.Status.errors.required">Your status is required, bro.</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Title</label>
+        <input type="text" class="form-control" id="inputAddress"  formControlName="titletodo">
+  <div *ngIf="submitted && todoForm.controls.titletodo.errors" class="error">
+    <div *ngIf="todoForm.controls.titletodo.errors.required">Your Body is required, bro.</div>
+    <div *ngIf="todoForm.controls.titletodo.errors.minlength">min lenght 20.</div>
+  </div>
+      </div>
+       
+    <button class="btn btn-md btn-success btn-block" type="submit">Save Todo</button>
+    </form>
+
+
+</div>

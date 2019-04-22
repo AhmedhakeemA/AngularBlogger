@@ -1,0 +1,34 @@
+
+
+
+<h1> Album {{AlbumID.id}}</h1>
+<ul>
+  <li >
+<div class="row" style="margin-bottom:10px;" >
+  <div class="col" *ngFor="let number of Pages">
+
+    <div class="card" *ngFor="let imags of Images">
+      <img class="card-img-top" src="{{imags.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{imags.title}}</h5>
+        <a href="{{imags.thumbnailUrl}}" class="card-link">thumbnailUrl</a>
+        <a href="{{imags.url}}" class="card-link">Url</a>
+      </div>
+      <div class="card-body">
+   <input type="hidden" #idcx value="{{imags.url}}">
+   <a class="btn btn-info btn-sm"  (click)="goToLink(idcx.value)" role="button" style="margin-right:4px;">
+     View ImG <span class="badge badge-light">{{imags.id}}</span>
+   </a>
+
+     <a class="btn btn-success btn-sm"  role="button" style="margin-right:4px;">
+       Album ID<span class="badge badge-light">{{imags.albumId}}</span>
+     </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  </li>
+</ul>
+
